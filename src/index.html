@@ -13,20 +13,44 @@
 
 <body class="h-screen w-screen bg-amber-50 flex flex-col">
 	<div class="h-full">
-		<div class="h-1/24 flex items-center justify-around font-bold">
-			<h5>
-				Everything is in sale!
-			</h5>
-			<h5>
-				Free shipping on orders over $50
-			</h5>
+		<div class="h-1/24 w-screen flex items-center justify-around font-bold">
+			<h1 class="text-lg cursor-pointer hover:underline">Home</h1>
+			<h1 class="text-lg cursor-pointer hover:underline">Click items to add them to the cart</h1>
+			<h1 class="text-lg cursor-pointer hover:underline">Products</h1>
 		</div>
-		<div class="h-1/12 bg-slate-800 flex items-center justify-center">
-			<h1 class="text-3xl text-white text-center">
+		<div class="h-1/12 bg-slate-800 flex items-center justify-center shadow-xl shadow-gray-400">
+			<h1 class="text-3xl text-white text-center font-extrabold">
 				Your E-Commerce of choice
 			</h1>
 		</div>
-	</div>
+		<div class="h-7/12 flex flex-wrap items-center justify-around">
+			<div>
+				<img src="../img/shirt.png" alt="" class="w-70 h-70 cursor-pointer">
+				<p class="text-center font-semibold">$25.00</p>
+			</div>
+			<div>
+				<img src="../img/pants.jpg" alt="" class="w-70 h-70 cursor-pointer">
+				<p class="text-center font-semibold">$40.00</p>
+			</div>
+			<div>
+				<img src="../img/boots.png" alt="" class="w-70 h-70 cursor-pointer">
+				<p class="text-center font-semibold">$60.00</p>
+			</div>
+			<div>
+				<img src="../img/belt.png" alt="" class="w-70 h-70 cursor-pointer">
+				<p class="text-center font-semibold">$15.00</p>
+			</div>
+		</div>
+		<div class="h-5/24 bg-slate-800 flex flex-col items-center justify-center shadow-inner shadow-gray-400">
+			<h1 class="text-2xl text-white font-bold">Checkout</h1>
+			<div class="flex items-center justify-center">
+				<p class="text-white mt-2 mr-5">Items in Cart: <span id="cart-count">0</span></p>
+				<p class="text-white mt-2 ml-5">Total price: <span id="cart-price">0</span></p>
+			</div>
+			<button type="button" class="text-white border-5 m-5 bg-green-800 border-green-800 rounded-xl cursor-pointer">
+				Pay Now
+			</button>
+		</div>
 </body>
 
 </html>
