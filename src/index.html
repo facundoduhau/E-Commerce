@@ -24,20 +24,32 @@
 			</h1>
 		</div>
 		<div class="h-7/12 flex flex-wrap items-center justify-around">
-			<div>
-				<img src="../img/shirt.png" alt="" class="w-70 h-70 cursor-pointer">
+			<div class="flex flex-col">
+				<button id="shirt-delete"
+					class="rounded-2xl w-7 h-7 self-end align-middle cursor-pointer text-white bg-slate-800"
+					type="button">x</button>
+				<img id="store-shirt" src="../img/shirt.png" alt="" class="w-70 h-70 cursor-pointer">
 				<p class="text-center font-semibold">$25.00</p>
 			</div>
-			<div>
-				<img src="../img/pants.jpg" alt="" class="w-70 h-70 cursor-pointer">
+			<div class="flex flex-col">
+				<button id="pants-delete"
+					class="rounded-2xl w-7 h-7 self-end align-middle cursor-pointer text-white bg-slate-800"
+					type="button">x</button>
+				<img id="store-pants" src="../img/pants.jpg" alt="" class="w-70 h-70 cursor-pointer">
 				<p class="text-center font-semibold">$40.00</p>
 			</div>
-			<div>
-				<img src="../img/boots.png" alt="" class="w-70 h-70 cursor-pointer">
+			<div class="flex flex-col">
+				<button id="boots-delete"
+					class="rounded-2xl w-7 h-7 self-end align-middle cursor-pointer text-white bg-slate-800"
+					type="button">x</button>
+				<img id="store-boots" src="../img/boots.png" alt="" class="w-70 h-70 cursor-pointer">
 				<p class="text-center font-semibold">$60.00</p>
 			</div>
-			<div>
-				<img src="../img/belt.png" alt="" class="w-70 h-70 cursor-pointer">
+			<div class="flex flex-col">
+				<button id="belt-delete"
+					class="rounded-2xl w-7 h-7 self-end align-middle cursor-pointer text-white bg-slate-800"
+					type="button">x</button>
+				<img id="store-belt" src="../img/belt.png" alt="" class="w-70 h-70 cursor-pointer">
 				<p class="text-center font-semibold">$15.00</p>
 			</div>
 		</div>
@@ -47,7 +59,7 @@
 				<p class="text-white mt-2 mr-5">Items in Cart: <span id="cart-count">0</span></p>
 				<p class="text-white mt-2 ml-5">Total price: <span id="cart-price">0</span></p>
 			</div>
-			<button type="button" class="text-white border-5 m-5 bg-green-800 border-green-800 rounded-xl cursor-pointer">
+			<button id="checkout-button" type="button" class="text-white border-5 m-5 bg-green-800 border-green-800 rounded-xl cursor-pointer">
 				Pay Now
 			</button>
 		</div>

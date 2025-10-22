@@ -1,40 +1,100 @@
-import { Canvas } from './modules/canvas.js';
+const shirt = document.getElementById('store-shirt');
+const pants = document.getElementById('store-pants');
+const belt = document.getElementById('store-belt');
+const boots = document.getElementById('store-boots');
 
-let circleBtn = document.querySelector('.circle');
-let squareBtn = document.querySelector('.square');
-let triangleBtn = document.querySelector('.triangle');
+const removeShirt = document.getElementById('shirt-delete');
+const removePants = document.getElementById('pants-delete');
+const removeBelt = document.getElementById('belt-delete');
+const removeBoots = document.getElementById('boots-delete');
 
-// create the canvas and reporting list
-let myCanvas = new Canvas('myCanvas', document.body, 480, 320);
-myCanvas.create();
-myCanvas.createReportList();
+const cartPrice = document.getElementById('cart-price');
+const cartCount = document.getElementById('cart-count');
 
-// draw a square
-squareBtn.addEventListener('click', () => {
-  import('./modules/square.js').then((Module) => {
-    let square1 = new Module.Square(myCanvas.ctx, myCanvas.listId, 50, 50, 100, 'blue');
-    square1.draw();
-    square1.reportArea();
-    square1.reportPerimeter();
-  })
+const checkoutButton = document.getElementById('checkout-button');
+
+var shirtCount = 0;
+var pantsCount = 0;
+var beltCount = 0;
+var bootsCount = 0;
+
+var price = 0;
+var count = 0;
+
+shirt.addEventListener('click', () => {
+	shirtCount++;
+	count++;
+	price += 25;
+	cartCount.textContent = count;
+	cartPrice.textContent = "$" + price;
+});
+pants.addEventListener('click', () => {
+	pantsCount++;
+	count++;
+	cartCount.textContent = count;
+	price += 40;
+	cartPrice.textContent = "$" + price;
+});
+belt.addEventListener('click', () => {
+	beltCount++;
+	count++;
+	cartCount.textContent = count;
+	price += 15;
+	cartPrice.textContent = "$" + price;
+});
+boots.addEventListener('click', () => {
+	bootsCount++;
+	count++;
+	cartCount.textContent = count;
+	price += 60;
+	cartPrice.textContent = "$" + price;
 });
 
-// draw a circle
-circleBtn.addEventListener('click', () => {
-  import('./modules/circle.js').then((Module) => {
-    let circle1 = new Module.Circle(myCanvas.ctx, myCanvas.listId, 75, 200, 100, 'green');
-    circle1.draw();
-    circle1.reportArea();
-    circle1.reportPerimeter();
-  })
+removeShirt.addEventListener('click', () => {
+	if (shirtCount > 0) {
+		shirtCount--;
+		count--;
+		price -= 25;
+		cartPrice.textContent = "$" + price;
+	}
+	cartCount.textContent = count;
+});
+removePants.addEventListener('click', () => {
+	if (pantsCount > 0) {
+		pantsCount--;
+		count--;
+		price -= 40;
+		cartPrice.textContent = "$" + price;
+	}
+	cartCount.textContent = count;
+});
+removeBelt.addEventListener('click', () => {
+	if (beltCount > 0) {
+		beltCount--;
+		count--;
+		price -= 15;
+		cartPrice.textContent = "$" + price;
+	}
+	cartCount.textContent = count;
+});
+removeBoots.addEventListener('click', () => {
+	if (bootsCount > 0) {
+		bootsCount--;
+		count--;
+		price -= 60;
+		cartPrice.textContent = "$" + price;
+	}
+	cartCount.textContent = count;
 });
 
-// draw a triangle
-triangleBtn.addEventListener('click', () => {
-  import('./modules/triangle.js').then((Module) => {
-    let triangle1 = new Module.Triangle(myCanvas.ctx, myCanvas.listId, 100, 75, 190, 'yellow');
-    triangle1.draw();
-    triangle1.reportArea();
-    triangle1.reportPerimeter();
-  })
+checkoutButton.addEventListener('click', () => {
+	alert("Thank you for your purchase of " + count + " items totaling $" + price + "!");
+	shirtCount = 0;
+	pantsCount = 0;
+	beltCount = 0;
+	bootsCount = 0;
+	price = 0;
+	count = 0;
+	cartCount.textContent = count;
+	cartPrice.textContent = "$" + price;
 });
